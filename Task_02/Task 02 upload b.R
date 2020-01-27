@@ -69,7 +69,9 @@ dev.off()
 ## Question 02 The data only shows what occurred at daycare and doesn't account for the rest of the time. It was also taken by various care givers who may have done things differently.
  
 # Extra Credit
-beren
+setwd()
+beren3 <- read.csv("beren_new.csv", stringsAsFactors=F)
+
 Naps <- which(beren3[,9]== "nap")
 BerenNap <- beren3[Naps,]
 Beren4 <- BerenNap
@@ -84,7 +86,6 @@ NapEndTime - NapStartTime
 NapStartTime + NapEndTime
 Beren4$end_minute <- Beren4$end_minute / 60
 Beren4$start_minute <- Beren4$start_minute / 60
-NapEndTime <- Beren4[7] : Beren4$end_minute /60
-Beren4$NapStartTime <- Beren4$start_hour : Beren4$start_minute
-Beren4$NapEndTime <- Beren4$end_hour : Beren4$end_minute
+Beren4$NapStartTime <- Beren4$start_hour + Beren4$start_minute
+Beren4$NapEndTime <- Beren4$end_hour + Beren4$end_minute
 
