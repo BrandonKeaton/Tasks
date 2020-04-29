@@ -80,7 +80,7 @@ ggplot(data0, aes(x=name, y=value)) +
 ggplot(data0, aes(x=name, y=value)) + 
   geom_bar(stat = "identity") +
 scale_fill_grey(start = 0.25, end = 0.75) +
-  theme(legend.position="none")
+  theme(legend.position="none",axis.text.x = element_text(size=6) )
 ####################################
 ggplot(data0, aes(x=name(cyl), fill=as.factor(cyl) )) +  
   geom_bar( ) +
@@ -195,3 +195,63 @@ TotalData <- data.frame(
 )
 ggplot(TotalData, aes(x=name, y=value, fill=name)) +
   geom_bar(stat="identity")+theme_minimal()         
+### T Tests
+BR <- c(167.8181818, 160.5, 173, 190.0952381, 156.3809524, 171.2857143,171.5238095,178,189.3809524,157.7142857, 165.2857143,186.6666667,177.047619)
+SR <- c(168.5,
+        166.75,
+        173.1875,
+        202.25,
+        156.125,
+        171.9166667,
+        173.625,
+        170.625,
+        187.4166667,
+        161,
+        185.4166667,
+        155.2083333,
+        179.5833333)
+
+
+
+US <- c(156.7037037,
+        164.9259259,
+        177.9444444,
+        229.8888889,
+        160.5555556,
+        171.4444444,
+        169.6666667,
+        183.6666667,
+        191.2222222,
+        186.6111111,
+        184.1481481,
+        199.7037037,
+        196.8518519)
+
+t.test(BR,SR)
+t.test(BR,US)
+t.test(SR,US)
+?mar
+ggplot(TotalData, aes(x=name, y=value, fill=name)) +
+  geom_bar(stat="identity")+theme_minimal() 
+
+theme(legend.position="none",axis.text.x = element_text(size=6))
+
+ggplot(TotalData, aes(x=name, y=value, fill=name)) +
+  geom_bar(stat="identity")+theme(axis.text.x = element_text(size=3))
+
+ggplot(TotalData, aes(x=name, y=value, fill=name)) +
+  geom_bar(stat="identity")+theme(axis.text.x = element_text(size=, angle = 90))
+
+ggplot(Data2, aes(x=name, y=value, fill=name)) +
+  geom_bar(stat="identity")+theme(axis.text.x = element_text(size=10, angle = 90))
+
+ggplot(Data3, aes(x=name, y=value, fill=name)) +
+  geom_bar(stat="identity")+ theme(axis.text.x = element_text(size=10, angle = 90))                             
+
+ggplot(Data1, aes(x=name, y=value, fill=name)) +
+  geom_bar(stat="identity")+theme(axis.text.x = element_text(size=10, angle = 90))
+            
+ggplot(data0, aes(x=name, y=value, fill=name)) +
+  geom_bar(stat="identity")+theme(axis.text.x = element_text(size=10, angle = 8))        
+
+                                  
